@@ -19,24 +19,22 @@ function datatest(){
 }
 
 function bc(blockNumber) {
-
-for (var count3=blockNumber; count3 < 4; count3++) {
-	if (count3 >= 1) {
-		prevInput[count3].innerHTML = hashSelector[count3 - 1].innerHTML
-	}
-		hashSelector[count3].innerHTML = "";
-		hashSelector[count3].innerHTML +=
-			CryptoJS.SHA256(dataInput[count3].value +
-				nonceInput[count3].value +
-				prevInput[count3].innerHTML
-			);
+	for (var count3=blockNumber; count3 < 4; count3++) {
+		if (count3 >= 1) {
+			prevInput[count3].innerHTML = hashSelector[count3 - 1].innerHTML
 		}
-	if (hashSelector[blockNumber].innerHTML.substr(0,2) == "00") {
-		blockSelector[blockNumber].style.background = 'lightgreen';
-	} else {
-		blockSelector[blockNumber].style.background = 'pink';
-	}
-	// console.log(hashSelector[count3].innerHTML);
+			hashSelector[count3].innerHTML = "";
+			hashSelector[count3].innerHTML +=
+				CryptoJS.SHA256(dataInput[count3].value +
+					nonceInput[count3].value +
+					prevInput[count3].innerHTML
+				);
+			}
+		if (hashSelector[blockNumber].innerHTML.substr(0,2) == "00") {
+			blockSelector[blockNumber].style.background = 'lightgreen';
+		} else {
+			blockSelector[blockNumber].style.background = 'pink';
+		}
 }
 
 function mine(blockNumber){
@@ -49,5 +47,4 @@ function mine(blockNumber){
 		console.log(nonceInput[blockNumber]);
 		console.log(hashSelector[blockNumber].innerHTML.substr(0,2));
 	}
-		// console.log(typeof(parseInt(nonceInput[blockNumber].value)));
 }
