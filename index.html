@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blockchain test</title>
+
+	<style>
+
+		.block {
+			height: 50vh;
+			width: 49%;
+			background: gray;
+			display: inline-block;
+			margin-right: 1px;
+			margin-bottom: 1px;
+		}
+
+		#hash {
+			height: 20px;
+			background: lightgray;
+		}
+
+		#prev {
+			height: 20px;
+			background: lightgray;
+		}
+
+	</style>
+</head>
+<body>
+
+<div class="block">
+
+	<p>
+		Block: <input id="block_number" value='1'></input>
+	</p>
+
+	<p>
+		Nonce: <input id="nonce" class="nonce" value='1' onkeyup="bc(0)"></input>
+	</p>
+
+	<p>
+		Data: <input id="data" class="data" rows='4' cols='4' value='test' onkeyup="bc(0)"></input><br>
+	</p>
+
+	<p>
+		Prev: <span id="prev" class="prev">000000</span>
+	</p>
+
+	<p>
+		Hash: <span id="hash" class="hash"></span><br>
+	</p>
+
+	<button onclick="mine(0)">Press</button>
+
+	<button onclick="datatest(1)">Data Test</button>
+
+</div>
+
+
+<div class="block">
+
+	<p>
+		Block: <input id="block_number" value='2'></input>
+	</p>
+
+	<p>
+		Nonce: <input id="nonce" class="nonce" value='1' onkeyup="bc(1)"></input>
+	</p>
+
+	<p>
+		Data: <input id="data" class="data" rows='4' cols='4' value='test' onkeyup="bc(1)"></input><br>
+	</p>
+
+	<p>
+		Prev: <span id="prev" class="prev"></span>
+	</p>
+
+	<p>
+		Hash: <span id="hash" class="hash"></span><br>
+	</p>
+
+
+	<button onclick="mine(1)">Press</button>
+
+</div>
+
+<div class="block">
+
+	<p>
+		Block: <input id="block_number" value='3'></input>
+	</p>
+
+	<p>
+		Nonce: <input id="nonce" class="nonce" value='1' onkeyup="bc(2)"></input>
+	</p>
+
+	<p>
+		Data: <input id="data" class="data" rows='4' cols='4' value='test' onkeyup="bc(2)"></input><br>
+	</p>
+
+	<p>
+		Prev: <span id="prev" class="prev"></span>
+	</p>
+
+	<p>
+		Hash: <span id="hash" class="hash"></span><br>
+	</p>
+
+	<button onclick="mine(2)">Press</button>
+
+</div>
+
+<div class="block">
+
+	<p>
+		Block: <input id="block_number" value='4'></input>
+	</p>
+
+	<p>
+		Nonce: <input id="nonce" class="nonce" value='1' onkeyup="bc(3)"></input>
+	</p>
+
+	<p>
+		Data: <input id="data" class="data" rows='4' cols='4' value='test' onkeyup="bc(3)"></input><br>
+	</p>
+
+	<p>
+		Prev: <span id="prev" class="prev"></span>
+	</p>
+
+	<p>
+		Hash: <span id="hash" class="hash"></span><br>
+	</p>
+
+	<button onclick="mine(3)">Press</button>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="components/core-min.js"></script>
+<script src="components/sha256.js"></script>
+<script src="bc.js"></script>
+
+
+</body>
+</html>
