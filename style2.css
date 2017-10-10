@@ -1,0 +1,25 @@
+.block {
+	height: 50vh;
+	width: 49%;
+	background: gray;
+	display: inline-block;
+	margin-right: 1px;
+	margin-bottom: 1px;
+}
+
+#hash {
+	height: 20px;
+	background: lightgray;
+}
+
+#prev {
+	height: 20px;
+	background: lightgray;
+}
+
+@media screen and (max-width: 640px){
+	.block {
+		width: 99%;
+		display: block;
+	}
+}
